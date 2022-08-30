@@ -97,7 +97,7 @@
           "active": false,
           "left": 572,
           "top": 0,
-          "zIndex": 15,
+          "zIndex": 1,
           "widthName": 84.5703125,
           "widthComment": 60
         },
@@ -159,7 +159,7 @@
           "active": false,
           "left": 926.9331,
           "top": 130.5793,
-          "zIndex": 20,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -221,7 +221,7 @@
           "active": false,
           "left": 230.401,
           "top": 117.3336,
-          "zIndex": 22,
+          "zIndex": 3,
           "widthName": 84.5703125,
           "widthComment": 60
         },
@@ -300,36 +300,13 @@
               "widthDefault": 60
             },
             "id": "1738dcd1-f9ad-443b-8124-807e46c3bd61"
-          },
-          {
-            "name": "이름",
-            "comment": "",
-            "dataType": "",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "c950801b-4288-4cf7-b4cc-906daeda187f"
           }
         ],
         "ui": {
           "active": false,
           "left": 582.2233,
           "top": 324.4445,
-          "zIndex": 32,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
         },
@@ -362,9 +339,9 @@
           "columnIds": [
             "3919a554-430b-46a3-a863-380da1de0304"
           ],
-          "x": 891.8652270833335,
-          "y": 324.4445,
-          "direction": "top"
+          "x": 582.2233,
+          "y": 389.6945,
+          "direction": "left"
         },
         "constraintName": "fk_이름 번호부여_to_번호취합",
         "visible": true,
@@ -388,7 +365,7 @@
           "columnIds": [
             "5761c3ee-11a9-48ef-a81d-c15198ed5a72"
           ],
-          "x": 768.0084562500001,
+          "x": 768.00845625,
           "y": 324.4445,
           "direction": "top"
         },
@@ -414,9 +391,9 @@
           "columnIds": [
             "1738dcd1-f9ad-443b-8124-807e46c3bd61"
           ],
-          "x": 644.1516854166667,
-          "y": 324.4445,
-          "direction": "top"
+          "x": 953.7936125,
+          "y": 389.6945,
+          "direction": "right"
         },
         "constraintName": "fk_답항 번호_to_번호취합",
         "visible": true,
