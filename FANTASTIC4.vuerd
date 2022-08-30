@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -272.7999999999993,
-    "scrollLeft": -279.1999999999997,
+    "scrollTop": -261.59999999999917,
+    "scrollLeft": -500.00000000000045,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -95,9 +95,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 366.4504,
-          "top": 406.7245,
-          "zIndex": 330,
+          "left": 482.4504,
+          "top": 393.7245,
+          "zIndex": 336,
           "widthName": 97.5703125,
           "widthComment": 60
         },
@@ -219,9 +219,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 653.9662,
-          "top": 600.6527,
-          "zIndex": 325,
+          "left": 690.9662,
+          "top": 602.6527,
+          "zIndex": 334,
           "widthName": 71.5703125,
           "widthComment": 60
         },
@@ -281,9 +281,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 825,
-          "top": 192.8,
-          "zIndex": 319,
+          "left": 786,
+          "top": 205.8,
+          "zIndex": 337,
           "widthName": 104.73046875,
           "widthComment": 60
         },
@@ -342,10 +342,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 1300,
-          "top": 259.8,
-          "zIndex": 318,
+          "active": true,
+          "left": 1256,
+          "top": 279.8,
+          "zIndex": 338,
           "widthName": 104.73046875,
           "widthComment": 60
         },
@@ -467,9 +467,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1394,
-          "top": 592.8,
-          "zIndex": 324,
+          "left": 1366,
+          "top": 600.8,
+          "zIndex": 333,
           "widthName": 104.73046875,
           "widthComment": 60
         },
@@ -493,18 +493,18 @@
           "columnIds": [
             "d863ef12-85c0-4da8-b2b5-a588202ce68b"
           ],
-          "x": 879.704,
-          "y": 490.2717,
-          "direction": "left"
+          "x": 1074.2743125,
+          "y": 545.2717,
+          "direction": "bottom"
         },
         "end": {
           "tableId": "b377c098-ae10-497e-b404-d4230ae04740",
           "columnIds": [
             "d8d2b2df-0d95-49e0-8683-56f27709aaee"
           ],
-          "x": 848.5365125,
-          "y": 600.6527,
-          "direction": "top"
+          "x": 1080.1068249999998,
+          "y": 657.6527,
+          "direction": "right"
         },
         "constraintName": "fk_공통 사용자 답항_to_사용자 답항",
         "visible": true,
@@ -519,8 +519,8 @@
           "columnIds": [
             "1e5f92d2-faf5-4d65-b61b-51ab29c9edb1"
           ],
-          "x": 549.242636328125,
-          "y": 516.7245,
+          "x": 665.242636328125,
+          "y": 503.7245,
           "direction": "bottom"
         },
         "end": {
@@ -528,8 +528,8 @@
           "columnIds": [
             "187746c7-f7c6-4de7-a82d-6bd7a81249d2"
           ],
-          "x": 653.9662,
-          "y": 655.6527,
+          "x": 690.9662,
+          "y": 657.6527,
           "direction": "left"
         },
         "constraintName": "fk_사용자 주요정보_to_사용자 답항",
@@ -554,8 +554,8 @@
           "columnIds": [
             "8e3dbeee-a263-421b-9b35-a2b573c3f989"
           ],
-          "x": 1019.5703125,
-          "y": 302.8,
+          "x": 980.5703125,
+          "y": 315.8,
           "direction": "bottom"
         },
         "constraintName": "fk_공통 사용자 답항_to_사용자 질문내용1",
@@ -580,8 +580,8 @@
           "columnIds": [
             "2fd1e757-25b1-4920-94ee-02fb75fcc53d"
           ],
-          "x": 1300,
-          "y": 314.8,
+          "x": 1256,
+          "y": 334.8,
           "direction": "left"
         },
         "constraintName": "fk_공통 사용자 답항_to_사용자 질문내용2",
@@ -632,8 +632,8 @@
           "columnIds": [
             "a9543cfc-e2aa-4d39-a756-457a3337b82b"
           ],
-          "x": 1394,
-          "y": 647.8,
+          "x": 1366,
+          "y": 655.8,
           "direction": "left"
         },
         "constraintName": "fk_공통 사용자 답항_to_사용자 질문내용4",
