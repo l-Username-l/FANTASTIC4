@@ -8,7 +8,7 @@ public class FANTASTIC_MySQL_Connect {
    static final String DB_URL = "jdbc:mysql://localhost/fantastic4";
    static final String USER = "root";
    static final String PASS = "tbrs00002b";
-   static final String QUERY = "SELECT name_no, name from name_no";
+   static final String QUERY = "";
 
    public static void main(String[] args) {
       // Open a connection
@@ -19,8 +19,8 @@ public class FANTASTIC_MySQL_Connect {
          // Extract data from result set
          while (rs.next()) {
             // Retrieve by column name
-            System.out.print("NAME_num: " + rs.getInt("name_no"));
-            System.out.print(", NAME: " + rs.getString("name"));
+            System.out.print();
+            System.out.print();
             //System.out.print(", First: " + rs.getString("first"));
             //System.out.println(", Last: " + rs.getString("last"));
          }
