@@ -1,5 +1,5 @@
-// import java.sql.Connection;
-// import java.sql.DriverManager;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,10 +11,11 @@ public class FANTASTIC4_Static {
     Statement stmt1;
     ResultSet rsTable;
     String name;
+    Scanner scan;
 
     public void statFunction(String usr_name) {
         
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("1. 설문자별 답변 결과 | 2. 질문별 총 답변수");
         System.out.print("원하는 번호를 입력하세요 : ");
         int selectNo = Integer.parseInt(scan.nextLine());
@@ -57,9 +58,9 @@ public class FANTASTIC4_Static {
             }
         }catch(SQLException e){
                 System.out.println("번호를 다시 입력하세요.");
-                selectNo = Integer.parseInt(scan.nextLine());
+                //selectNo = Integer.parseInt(scan.nextLine());
                 
-            }
+        }
         //} //return selectNo;
     }
 }
