@@ -22,7 +22,6 @@ public class FANTASTIC4_MAIN {
             //int selectNo = Integer.parseInt(scanner.nextLine());
             String selectNo = scanner.nextLine();
 
-
             if (selectNo.equals("P") ) {
                 System.out.println("--------설문을 시작합니다---------");
                 System.out.print("이릅을 입력하세요: ");
@@ -32,7 +31,7 @@ public class FANTASTIC4_MAIN {
                 FANTASTIC4_Question quest = new FANTASTIC4_Question();
                 quest.questFunction(usr_name);
 
-            } else if (selectNo.equals("S") ) {
+            } else if (selectNo.equals("S" )) {
 
                 FANTASTIC4_Static stat = new FANTASTIC4_Static();
                 stat.statFunction(usr_name);
