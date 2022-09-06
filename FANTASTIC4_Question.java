@@ -19,7 +19,7 @@ public class FANTASTIC4_Question {
     static int val;
     static int val1;
 
-    public void questFunction(String user_name){
+    public void questFunction(String user_name) throws SQLException{
 
 
         // Step1: User name 받음
@@ -31,9 +31,13 @@ public class FANTASTIC4_Question {
 
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
+<<<<<<< HEAD
         try {
             FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             stmt = connect.SQL_connect();
+=======
+        //try {
+>>>>>>> f6f65319724441a4f5b4da651e8c3c6958a0c4a0
             //FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
@@ -96,11 +100,20 @@ public class FANTASTIC4_Question {
                 QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
                 val1 = stmt.executeUpdate(QUERY3);
             }
+<<<<<<< HEAD
         }
         
 
 
         
+=======
+            
+
+
+        //} catch (SQLException e) {
+        //    e.printStackTrace();
+        //}
+>>>>>>> f6f65319724441a4f5b4da651e8c3c6958a0c4a0
 
 
         
