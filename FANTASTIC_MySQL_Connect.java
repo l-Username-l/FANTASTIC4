@@ -6,14 +6,15 @@ import java.sql.Statement;
 
 public class FANTASTIC_MySQL_Connect {
 
-   static final String DB_URL = "jdbc:mysql://localhost/fantastic4";
-   static final String USER = "root";
-   static final String PASS = "tbrs00002b";
+   
    Statement stmt;
-   
-   
 
    public Statement SQL_connect() {
+      
+      final String DB_URL = "jdbc:mysql://localhost/fantastic4";
+      final String USER = "root";
+      final String PASS = "tbrs00002b";
+      
       // Open a connection
       try {
          
@@ -25,5 +26,9 @@ public class FANTASTIC_MySQL_Connect {
          e.printStackTrace();
       }
       return stmt;
+
    }
+
+   // FANTASTIC_MySQL_Connect con_arbi = new FANTASTIC_MySQL_Connect();
+   // return con_arbi.stmt;
 }
