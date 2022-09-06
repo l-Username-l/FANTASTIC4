@@ -13,7 +13,7 @@ public class FANTASTIC_MySQL_Connect {
    
    
 
-   public static Statement SQL_connect() {
+   public static void SQL_connect() {
       // Open a connection
       try {
          
@@ -24,6 +24,6 @@ public class FANTASTIC_MySQL_Connect {
       } catch (SQLException e) {
          e.printStackTrace();
       }
-      return stmt;
+      return ;
    }
 }
