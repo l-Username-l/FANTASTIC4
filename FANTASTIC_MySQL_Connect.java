@@ -9,11 +9,11 @@ public class FANTASTIC_MySQL_Connect {
    static final String DB_URL = "jdbc:mysql://localhost/fantastic4";
    static final String USER = "root";
    static final String PASS = "tbrs00002b";
-   Statement stmt;
+   static Statement stmt;
    
    
 
-   public Statement SQL_connect() {
+   public static void SQL_connect() {
       // Open a connection
       try {
          
@@ -24,6 +24,6 @@ public class FANTASTIC_MySQL_Connect {
       } catch (SQLException e) {
          e.printStackTrace();
       }
-      return stmt;
+      return ;
    }
 }
