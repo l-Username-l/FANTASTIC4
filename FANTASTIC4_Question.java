@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class FANTASTIC4_Question {
 
-    static String QUERY1 = "SELECT SURV_NO, SURV FROM surv_no";
-    static String QUERY2 = "SELECT ANS_NO, ANS FROM ans_no";
-    static String QUERY3 = "SELECT NAME_NO, NAME FROM name_no";
+    static String QUERY1 = "SELECT SURV_NO, SURV FROM SURV_NO";
+    static String QUERY2 = "SELECT ANS_NO, ANS FROM ANS_NO";
+    static String QUERY3 = "SELECT NAME_NO, NAME FROM NAME_NO";
     static String QUERY4 = "SELECT NAME_NO, SURV_NO, ANS_NO FROM result";
     static Statement stmt;
     static String current_name;
