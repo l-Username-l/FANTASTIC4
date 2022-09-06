@@ -1,10 +1,8 @@
 import java.sql.Statement;
 import java.util.Scanner;
 
-//import com.mysql.cj.PreparedQuery;
-
 import java.sql.ResultSet;
-import java.sql.SQLException;
+//import java.sql.SQLException;
 
 public class FANTASTIC4_Question {
 
@@ -23,6 +21,7 @@ public class FANTASTIC4_Question {
 
     public void questFunction(String user_name){
 
+
         // Step1: User name 받음
         Scanner scanner = new Scanner(System.in);//static 
         current_name = user_name;
@@ -33,11 +32,13 @@ public class FANTASTIC4_Question {
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
         try {
+            FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
+            stmt = connect.SQL_connect();
             //FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
             // Tables 연동
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
+            //stmt = FANTASTIC_MySQL_Connect.SQL_connect();
             rsQues = stmt.executeQuery(QUERY1);
             rsAns = stmt.executeQuery(QUERY2);
             rsName = stmt.executeQuery(QUERY3);
@@ -49,7 +50,7 @@ public class FANTASTIC4_Question {
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
             val = stmt.executeUpdate(QUERY3);
-            
+
 
 
             // Step4: 'surv_no' table에서 질문 사항 불러들이기
@@ -95,12 +96,11 @@ public class FANTASTIC4_Question {
                 QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
                 val1 = stmt.executeUpdate(QUERY3);
             }
-            
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
+        
+
+
+        
 
 
         
