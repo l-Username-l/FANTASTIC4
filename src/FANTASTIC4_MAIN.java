@@ -6,17 +6,22 @@ public class FANTASTIC4_MAIN {
     //public static int P = 1;
     //static int S = 2;
     //static int Q = 3;
-    static String[] usr_output = new String[4];
-    static String usr_name;
-    static Scanner scanner;
-    static int i;
+    //String[] usr_output = new String[4];
+    //String usr_name;
+    //Scanner scanner;
+    //int i;
 
     public static void main(String[] aStrings) throws SQLException {
         boolean run = true;
+        String[] usr_output = new String[4];
+        String usr_name;
+        Scanner scanner;
+        int i;
 
-        scanner = new Scanner(System.in);
+        //scanner = new Scanner(System.in);
 
         while (run) {
+            scanner = new Scanner(System.in);
             System.out.println("----------------------------------");
             System.out.println(" P.설문시작 | S.통계 | Q.종료 ");
             System.out.println("----------------------------------");
@@ -43,6 +48,7 @@ public class FANTASTIC4_MAIN {
             } else if (selectNo.equals("S" )) {
 
                 FANTASTIC4_Static stat = new FANTASTIC4_Static();
+                usr_name = scanner.nextLine();
                 stat.statFunction(usr_name);
 
             } else {
