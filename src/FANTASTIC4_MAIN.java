@@ -6,9 +6,10 @@ public class FANTASTIC4_MAIN {
     //public static int P = 1;
     //static int S = 2;
     //static int Q = 3;
-    static String[] usr_output;
+    static String[] usr_output = new String[4];
     static String usr_name;
     static Scanner scanner;
+    static int i;
 
     public static void main(String[] aStrings) throws SQLException {
         boolean run = true;
@@ -31,7 +32,13 @@ public class FANTASTIC4_MAIN {
 
                 // Generation of the instance
                 FANTASTIC4_Question quest = new FANTASTIC4_Question();
-                usr_output = quest.questFunction(usr_name);
+                i = 0;
+                while (i < 4){
+                    usr_output[i] = quest.questFunction(usr_name)[i];
+                    i++;
+                }
+
+                //usr_output = quest.questFunction(usr_name);
 
             } else if (selectNo.equals("S" )) {
 

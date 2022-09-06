@@ -48,7 +48,8 @@ public class FANTASTIC4_Question {
             int usr_number;//Static 
             QUERY3 = "select count(*) from NAME_NO";
             ResultSet re_arbi = stmt.executeQuery(QUERY3);// + 1;
-            usr_number = re_arbi.getInt(1) + 1;
+            usr_number = re_arbi.getInt(1);
+            usr_number += 1;
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
             val = stmt.executeUpdate(QUERY3);
