@@ -21,6 +21,7 @@ public class FANTASTIC4_MAIN {
         //scanner = new Scanner(System.in);
 
         while (run) {
+            
             scanner = new Scanner(System.in);
             System.out.println("----------------------------------");
             System.out.println(" P.설문시작 | S.통계 | Q.종료 ");
@@ -37,6 +38,7 @@ public class FANTASTIC4_MAIN {
 
                 // Generation of the instance
                 FANTASTIC4_Question quest = new FANTASTIC4_Question();
+                
                 i = 0;
                 while (i < 4){
                     usr_output[i] = quest.questFunction(usr_name)[i];
