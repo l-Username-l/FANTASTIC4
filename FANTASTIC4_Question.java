@@ -46,7 +46,7 @@ public class FANTASTIC4_Question {
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
             int usr_number;//Static 
-            QUERY3 = "select count(*) from name_no";
+            QUERY3 = "select count(*) from NAME_NO";
             ResultSet re_arbi = stmt.executeQuery(QUERY3);// + 1;
             usr_number = re_arbi.getInt(1) + 1;
             // Update!!

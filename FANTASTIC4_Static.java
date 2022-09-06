@@ -11,10 +11,11 @@ public class FANTASTIC4_Static {
     Statement stmt1;
     ResultSet rsTable;
     String name;
+    Scanner scan;
 
     public void statFunction(String usr_name) {
         
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.println("1. 설문자별 답변 결과 | 2. 질문별 총 답변수");
         System.out.print("원하는 번호를 입력하세요 : ");
         int selectNo = Integer.parseInt(scan.nextLine());
@@ -34,9 +35,9 @@ public class FANTASTIC4_Static {
                 case 1:
                     System.out.println("----- 설문자별 답변 결과 -----");
                     for (int j = 1; j < 5; j++){
-                        QUERY4 = "select COUNT(ANS_NO) from result where name_no "+
-                        "in (select DISTINCT name_no from name_no where NAME = " + name +" "+
-                        "and surv_no = "+ j +" ";
+                        QUERY4 = "select COUNT(ANS_NO) from result where NAME_NO "+
+                        "in (select DISTINCT NAME_NO from NAME_NO where NAME = " + name +" "+
+                        "and SURV_NO = "+ j +" ";
                         ResultSet r = stmt1.executeQuery(QUERY4);
                         System.out.println("총"+j+"번 항의 갯수: "+ r);
 
@@ -46,9 +47,9 @@ public class FANTASTIC4_Static {
     
                 case 2:
                     for (int j = 1; j < 5; j++){
-                        QUERY4 = "select COUNT(DISTINCT name_no) from result "+
+                        QUERY4 = "select COUNT(DISTINCT NAME_NO) from result "+
                         "where 1 = 1 "+
-                        "and ans_no = "+ j + " ";
+                        "and ANS_NO = "+ j + " ";
                         ResultSet r = stmt1.executeQuery(QUERY4);
                         System.out.println("총"+j+"번 항을 선택한 명 수: "+ r);
 

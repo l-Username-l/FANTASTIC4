@@ -8,11 +8,12 @@ public class FANTASTIC4_MAIN {
     //static int Q = 3;
     static String[] usr_output;
     static String usr_name;
+    static Scanner scanner;
 
     public static void main(String[] aStrings) throws SQLException {
         boolean run = true;
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 
         while (run) {
             System.out.println("----------------------------------");
