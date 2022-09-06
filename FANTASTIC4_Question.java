@@ -12,13 +12,13 @@ public class FANTASTIC4_Question {
     static String QUERY3 = "SELECT NAME_NO, NAME FROM NAME_NO";
     static String QUERY4 = "SELECT NAME_NO, SURV_NO, ANS_NO FROM result";
     Statement stmt;
-    static String current_name;
+    String current_name;
     ResultSet rsQues;
     ResultSet rsAns;
     ResultSet rsName;
     ResultSet rsResult;
     int val;
-    static int val1;
+    int val1;
 
     public String[] questFunction(String user_name){
 

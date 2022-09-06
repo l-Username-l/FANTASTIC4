@@ -42,6 +42,6 @@ public class FANTASTIC4_MAIN {
                 break;
             }
         }
-        return;
+        //eturn;
     }
 }
