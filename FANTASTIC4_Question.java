@@ -17,6 +17,9 @@ public class FANTASTIC4_Question {
     static ResultSet rsQues;
     static ResultSet rsAns;
     static ResultSet rsName;
+    static ResultSet rsResult;
+    static int val;
+    static int val1;
 
     public void questFunction(String user_name){
 
@@ -45,7 +48,7 @@ public class FANTASTIC4_Question {
             usr_number = stmt.executeQuery(QUERY3);// + 1;
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
-            stmt.executeUpdate(QUERY3);
+            val = stmt.executeUpdate(QUERY3);
             
 
 
@@ -86,10 +89,11 @@ public class FANTASTIC4_Question {
             }
 
             // Step7: 설문 조사 결과로 'result' table update
-            ResultSet rsResult = stmt.executeQuery(QUERY4);
+            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
+            rsResult = stmt.executeQuery(QUERY4);
             for (int j = 0; j < usr_output.length; j++){
                 QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
-                int val1 = stmt.executeUpdate(QUERY3);
+                val1 = stmt.executeUpdate(QUERY3);
             }
             
 
