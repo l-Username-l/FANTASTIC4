@@ -3,7 +3,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 public class FANTASTIC_MySQL_Connect {
 
    
@@ -17,9 +16,8 @@ public class FANTASTIC_MySQL_Connect {
       
       // Open a connection
       try {
-         
          Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-         stmt = conn.createStatement();
+         Statement stmt = conn.createStatement();
          // return stmt;
 
       } catch (SQLException e) {
