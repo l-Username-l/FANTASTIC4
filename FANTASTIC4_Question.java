@@ -17,7 +17,12 @@ public class FANTASTIC4_Question {
         // Step1: User name 받음
         Scanner scanner = new Scanner(System.in);//static 
         current_name = user_name;
-        String[] usr_output = new String[4];//static 
+        String[] usr_output = new String[4];//static
+        ResultSet rsQues;
+        ResultSet rsAns;
+        ResultSet rsName;
+        
+
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
         try {
@@ -25,9 +30,9 @@ public class FANTASTIC4_Question {
             stmt = connect.SQL_connect();
 
             // Tables 연동
-            ResultSet rsQues = stmt.executeQuery(QUERY1);
-            ResultSet rsAns = stmt.executeQuery(QUERY2);
-            ResultSet rsName = stmt.executeQuery(QUERY3);
+            rsQues = stmt.executeQuery(QUERY1);
+            rsAns = stmt.executeQuery(QUERY2);
+            rsName = stmt.executeQuery(QUERY3);
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
             ResultSet usr_number;//Static 
