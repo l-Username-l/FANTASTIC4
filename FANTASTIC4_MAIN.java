@@ -5,6 +5,8 @@ public class FANTASTIC4_MAIN {
     public static int P = 1;
     static int S = 2;
     static int Q = 3;
+    static int[] usr_output;
+    static String usr_name;
 
     public static void main(String[] aStrings) {
         boolean run = true;
@@ -20,11 +22,20 @@ public class FANTASTIC4_MAIN {
             int selectNo = Integer.parseInt(scanner.nextLine());
 
             if( selectNo == P ){
+
+                System.out.println("--------설문을 시작합니다---------");
+                System.out.print("이릅을 입력하세요: ");
+                usr_name = scanner.next();
+                
+                // Generation of the instance
                 FANTASTIC4_Question quest = new FANTASTIC4_Question();
-                int Fan = quest.questFunction();
+                quest.questFunction(usr_name);
+
             }  else if (selectNo == S ) {
+                
                 FANTASTIC4_Static stat = new FANTASTIC4_Static();
-                int Fan = stat.statFunction();
+                stat.statFunction(usr_name);
+
             } else{
                 System.out.println("이용해주셔서 감사합니다!");
             }

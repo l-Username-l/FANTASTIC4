@@ -1,35 +1,65 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
+
 
 public class FANTASTIC4_Static {
 
-    public int statFunction() {
-        System.out.println("통계");
+    static String QUERY4 = "SELECT NAME_NO, SURV_NO, ANS_NO FROM result";
+    static Statement stmt1;
+    static ResultSet rsTable;
+    static String name;
 
+    public void statFunction(String usr_name) {
+        
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("1. 설문자별 답변 결과 | 2. 질문별 총 답변수");
+        System.out.print("원하는 번호를 입력하세요 : ");
         int selectNo = Integer.parseInt(scanner.nextLine());
+        name = usr_name;
 
-        switch (selectNo) {
-            case 1:
-                System.out.println("1. 설문자별 답변 결과 | 2. 질문별 총 답변수");
-                System.out.print("원하는 번호를 입력하세요 : ");
-                if (selectNo == 1) {
-                    System.out.println("\t질문(1)\t질문(2)\t질문(3)\t질문(4)");
-                    System.out.println("신우진\t3 \t2 \t4 \t1");
-                    System.out.println("정명훈\t1 \t2 \t4 \t3");
-                    System.out.println("윤소정\t2 \t1 \t4 \t3");
-                    System.out.println("이애연\t4 \t3 \t1 \t2");
-                } else {
-                    System.out.println("1 : 전혀 아니다, 2번 : 아니다, 3번 : 그렇다, 4번 : 매우 그렇다");
-                    System.out.println("\t답(1)\t답(2)\t답(3)\t답(4)");
-                    System.out.println("질문(1)\t5\t10\t2\t3");
-                    System.out.println("질문(2)\t8\t7\t3\t2");
-                    System.out.println("질문(3)\t4\t7\t4\t5");
-                    System.out.println("질문(4)\t6\t3\t5\t6");
 
-                }
-                return 2;
+        try {
+            // 'result' table에 연동
+            FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
+            stmt1 = connect.SQL_connect();
+
+            // Tables 연동
+            
+            switch (selectNo) {
+                case 1:
+                    System.out.println("----- 설문자별 답변 결과 -----")
+                    for (int j = 1; j < 5; j++){
+                        QUERY4 = "select COUNT(ans_no) from result where name_no "+
+                        "in (select DISTINCT name_no from name_no where NAME = " + name +" "+
+                        "and surv_no = "+ j +" ";
+                        int r = stmt1.excuteQuery(QUERY4);
+                        System.out.println("총"+j+"번 항의 갯수: "+ r);
+
+                    }
+                    
+                    break;
+    
+                Case 2:
+                    for (int j = 1; j < 5; j++){
+                        QUERY4 = "select COUNT(DISTINCT name_no) from result "+
+                        "where 1 = 1 "+
+                        "and ans_no = "+ j + " ";
+                        int r = stmt1.excuteQuery(QUERY4);
+                        System.out.println("총"+j+"번 항을 선택한 명 수: "+ r);
+
+                    }
+                    break;
+            }
+
+        } catch (SQLException e){
+            System.out.println("번호를 다시 입력하세요.")
+
         }
-        return selectNo;
+
+        //return selectNo;
     }
 }
