@@ -1,9 +1,7 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class FANTASTIC4_Question {
 
@@ -13,13 +11,13 @@ public class FANTASTIC4_Question {
     static String QUERY4 = "SELECT NAME_NO, SURV_NO, ANS_NO FROM result";
     static Statement stmt;
     static String current_name;
-    
+
     public void questFunction(String user_name){
 
         // Step1: User name 받음
-        static Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);//static 
         current_name = user_name;
-        static String[] usr_output = new String[4];
+        String[] usr_output = new String[4];//static 
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
         try {
@@ -27,14 +25,14 @@ public class FANTASTIC4_Question {
             stmt = connect.SQL_connect();
 
             // Tables 연동
-            Resultset rsQues = stmt.executeQuery(QUERY1);
-            Resultset rsAns = stmt.excuteQuery(Query2);
-            Resultset rsName = stmt.excuteQuery(Query3);
+            ResultSet rsQues = stmt.executeQuery(QUERY1);
+            ResultSet rsAns = stmt.executeQuery(QUERY2);
+            ResultSet rsName = stmt.executeQuery(QUERY3);
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
-            Static int usr_number;
+            ResultSet usr_number;//Static 
             QUERY3 = "select count(*) from name_no";
-            usr_number = stmt.excuteQuery(QUERY3) + 1;
+            usr_number = stmt.executeQuery(QUERY3);// + 1;
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
             int val = stmt.executeUpdate(QUERY3);
@@ -48,8 +46,8 @@ public class FANTASTIC4_Question {
                 System.out.print(rsQues.getInt("SURV_NO")+"번 문항 : ");
                 System.out.println(rsQues.getString("SURV"));
                 
-                System.out.println("----------------------------------------")
-                while (rsAns.next){
+                System.out.println("----------------------------------------");
+                while (rsAns.next()){
 
                     System.out.print(rsAns.getInt("ANS_NO")+"번 대답 : ");
                     System.out.println(rsAns.getString("ANS"));
@@ -58,11 +56,11 @@ public class FANTASTIC4_Question {
 
                 // Step6: 설문자의 답 받아들이기
                 System.out.print("--------답을 선택해 주세요 : ");
-                String choose_num = scanner.nextLiine();
+                String choose_num = scanner.nextLine();
                 if (choose_num.length() == 1){
 
                     // Input the result of the question
-                    usr_output[i] = (int) choose_num;
+                    usr_output[i] = (String) choose_num;
                     i++;
                 } else {
                     System.out.println("복수의 답이 입력 되었거나 답항지에 없는 번호입니다.");
@@ -77,9 +75,9 @@ public class FANTASTIC4_Question {
             }
 
             // Step7: 설문 조사 결과로 'result' table update
-            Resultset rsResult = stmt.excuteQuery(Query4);
-            for (int j = 0; j < usr_output.length(); j++){
-                QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+usr_number+","+j+","+usr_output[j]+")";
+            ResultSet rsResult = stmt.executeQuery(QUERY4);
+            for (int j = 0; j < usr_output.length; j++){
+                QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
                 int val1 = stmt.executeUpdate(QUERY3);
             }
             
