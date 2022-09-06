@@ -21,7 +21,7 @@ public class FANTASTIC4_Question {
     static int val;
     static int val1;
 
-    public void questFunction(String user_name){
+    public void questFunction(String user_name) throws SQLException{
 
         // Step1: User name 받음
         Scanner scanner = new Scanner(System.in);//static 
@@ -32,12 +32,12 @@ public class FANTASTIC4_Question {
 
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
-        try {
+        //try {
             //FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
             // Tables 연동
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
+            //stmt = FANTASTIC_MySQL_Connect.SQL_connect();
             rsQues = stmt.executeQuery(QUERY1);
             rsAns = stmt.executeQuery(QUERY2);
             rsName = stmt.executeQuery(QUERY3);
@@ -98,9 +98,9 @@ public class FANTASTIC4_Question {
             
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        //} catch (SQLException e) {
+        //    e.printStackTrace();
+        //}
 
 
         

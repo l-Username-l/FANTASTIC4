@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class FANTASTIC4_MAIN {
@@ -8,7 +9,7 @@ public class FANTASTIC4_MAIN {
     static int[] usr_output;
     static String usr_name;
 
-    public static void main(String[] aStrings) {
+    public static void main(String[] aStrings) throws SQLException {
         boolean run = true;
 
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +39,7 @@ public class FANTASTIC4_MAIN {
 
             } else {
                 System.out.println("이용해주셔서 감사합니다!");
+                break;
             }
         }
         return;
