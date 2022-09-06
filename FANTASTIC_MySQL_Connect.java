@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.concurrent.locks.Condition;
+
 
 public class FANTASTIC_MySQL_Connect {
 
@@ -13,18 +13,13 @@ public class FANTASTIC_MySQL_Connect {
    
    
 
-   public static Statement SQL_connect(String query) {
+   public static Statement SQL_connect() {
       // Open a connection
       try {
          
          Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-         Statement stmt = conn.createStatement();
+         stmt = conn.createStatement();
          
-         if (query.length() != 0) {
-            stmt = conn.prepareStatement(query);
-         } else {
-            
-         }
          
          // ResultSet rs = stmt.executeQuery(QUERY);
 

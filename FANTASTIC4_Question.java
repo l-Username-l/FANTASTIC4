@@ -1,5 +1,8 @@
 import java.sql.Statement;
 import java.util.Scanner;
+
+//import com.mysql.cj.PreparedQuery;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -21,7 +24,7 @@ public class FANTASTIC4_Question {
         Scanner scanner = new Scanner(System.in);//static 
         current_name = user_name;
         String[] usr_output = new String[4];//static
-        int value;
+        
         
 
 
@@ -31,13 +34,9 @@ public class FANTASTIC4_Question {
             //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
             // Tables 연동
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
+            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
             rsQues = stmt.executeQuery(QUERY1);
-            
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY2);
             rsAns = stmt.executeQuery(QUERY2);
-            
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY3);
             rsName = stmt.executeQuery(QUERY3);
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
@@ -46,7 +45,8 @@ public class FANTASTIC4_Question {
             usr_number = stmt.executeQuery(QUERY3);// + 1;
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
-            value = stmt.executeUpdate(QUERY3);
+            stmt.executeUpdate(QUERY3);
+            
 
 
             // Step4: 'surv_no' table에서 질문 사항 불러들이기
@@ -100,7 +100,7 @@ public class FANTASTIC4_Question {
 
 
         
-        //return usr_output;
+        return ;
 
         
     }
