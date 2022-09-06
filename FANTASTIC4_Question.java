@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import java.sql.ResultSet;
 //import java.sql.SQLException;
+import java.sql.SQLException;
 
 public class FANTASTIC4_Question {
 
@@ -10,16 +11,16 @@ public class FANTASTIC4_Question {
     static String QUERY2 = "SELECT ANS_NO, ANS FROM ans_no";
     static String QUERY3 = "SELECT NAME_NO, NAME FROM name_no";
     static String QUERY4 = "SELECT NAME_NO, SURV_NO, ANS_NO FROM result";
-    static Statement stmt;
+    Statement stmt;
     static String current_name;
-    static ResultSet rsQues;
-    static ResultSet rsAns;
-    static ResultSet rsName;
-    static ResultSet rsResult;
-    static int val;
-    static int val1;
+    ResultSet rsQues;
+    ResultSet rsAns;
+    ResultSet rsName;
+    ResultSet rsResult;
+    int val;
+    int val1;
 
-    public void questFunction(String user_name) throws SQLException{
+    public String[] questFunction(String user_name){
 
 
         // Step1: User name 받음
@@ -31,13 +32,9 @@ public class FANTASTIC4_Question {
 
 
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
-<<<<<<< HEAD
         try {
             FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             stmt = connect.SQL_connect();
-=======
-        //try {
->>>>>>> f6f65319724441a4f5b4da651e8c3c6958a0c4a0
             //FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
             //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
@@ -48,9 +45,10 @@ public class FANTASTIC4_Question {
             rsName = stmt.executeQuery(QUERY3);
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
-            ResultSet usr_number;//Static 
+            int usr_number;//Static 
             QUERY3 = "select count(*) from name_no";
-            usr_number = stmt.executeQuery(QUERY3);// + 1;
+            ResultSet re_arbi = stmt.executeQuery(QUERY3);// + 1;
+            usr_number = re_arbi.getInt(1) + 1;
             // Update!!
             QUERY3 = "insert into name_no (NAME_NO, NAME) values ("+usr_number+","+current_name+")";
             val = stmt.executeUpdate(QUERY3);
@@ -94,30 +92,18 @@ public class FANTASTIC4_Question {
             }
 
             // Step7: 설문 조사 결과로 'result' table update
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
-            rsResult = stmt.executeQuery(QUERY4);
+            //rsResult = stmt.executeQuery(QUERY4);
             for (int j = 0; j < usr_output.length; j++){
-                QUERY3 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
+                QUERY4 = "insert into result (NAME_NO, SURV_NO, ANS_NO) values ("+ usr_number +","+ j +","+ usr_output[j] +")";
                 val1 = stmt.executeUpdate(QUERY3);
             }
-<<<<<<< HEAD
+        } catch (SQLException e) {
+            
+            e.printStackTrace();
+
         }
         
-
-
-        
-=======
-            
-
-
-        //} catch (SQLException e) {
-        //    e.printStackTrace();
-        //}
->>>>>>> f6f65319724441a4f5b4da651e8c3c6958a0c4a0
-
-
-        
-        return ;
+        return usr_output;
 
         
     }
