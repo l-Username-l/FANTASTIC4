@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": -269.5999999999994,
-    "scrollLeft": -488.8000000000003,
+    "scrollLeft": -425.6000000000003,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -97,7 +97,7 @@
           "active": false,
           "left": 431.6,
           "top": 205,
-          "zIndex": 22,
+          "zIndex": 4,
           "widthName": 84.5703125,
           "widthComment": 60
         },
@@ -159,7 +159,7 @@
           "active": false,
           "left": 420.6,
           "top": 390,
-          "zIndex": 24,
+          "zIndex": 5,
           "widthName": 84.5703125,
           "widthComment": 60
         },
@@ -221,7 +221,7 @@
           "active": false,
           "left": 440.6,
           "top": 575,
-          "zIndex": 26,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -283,7 +283,7 @@
           "active": false,
           "left": 1013.6,
           "top": 278,
-          "zIndex": 5,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -345,7 +345,7 @@
           "active": false,
           "left": 1049.4,
           "top": 517,
-          "zIndex": 4,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
@@ -428,9 +428,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1562.6,
-          "top": 392.2,
-          "zIndex": 6,
+          "left": 1581.6,
+          "top": 359.2,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
         },
@@ -567,8 +567,8 @@
           "columnIds": [
             "ba3dbec2-cda0-4fc4-969e-687af97303a6"
           ],
-          "x": 1562.6,
-          "y": 490.075,
+          "x": 1581.6,
+          "y": 391.825,
           "direction": "left"
         },
         "constraintName": "fk_이름/설문_to_번호취합",
@@ -595,8 +595,8 @@
             "0ac1301a-46c8-46ad-bd68-7ba834a8907f",
             "020f9dcc-8c1b-41bd-a9e6-d5f70742d251"
           ],
-          "x": 1562.6,
-          "y": 424.825,
+          "x": 1581.6,
+          "y": 457.075,
           "direction": "left"
         },
         "constraintName": "fk_설문/답항_to_번호취합",
