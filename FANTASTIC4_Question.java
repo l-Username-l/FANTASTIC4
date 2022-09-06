@@ -51,7 +51,7 @@ public class FANTASTIC4_Question {
 
             // Step4: 'surv_no' table에서 질문 사항 불러들이기
             // Step5: 질문 사항 하위에 'ans_no' table에서 질문들 불러들이기
-            int i = 0;
+            int i = 0;   // 여기서 오류남 
             while (rsQues.next()) {
                 // Retrieve by column name
                 System.out.print(rsQues.getInt("SURV_NO")+"번 문항 : ");
