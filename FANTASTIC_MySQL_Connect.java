@@ -9,15 +9,18 @@ public class FANTASTIC_MySQL_Connect {
    static final String USER = "root";
    static final String PASS = "tbrs00002b";
    static Statement stmt;
+   
+   
 
-   public static Statement SQL_connect() {
+   public static Statement SQL_connect(String query) {
       // Open a connection
       try {
+         
          Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-         stmt = conn.createStatement();
+         stmt = conn.prepareStatement(query);
          // ResultSet rs = stmt.executeQuery(QUERY);
 
-         // return stmt;
+         //return stmt;
 
       } catch (SQLException e) {
          e.printStackTrace();
