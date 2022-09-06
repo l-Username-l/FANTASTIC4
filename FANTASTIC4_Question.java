@@ -28,11 +28,16 @@ public class FANTASTIC4_Question {
         // Step2: Fantastic4 DB 내의 모든 table과 연동 & Query 창 열기
         try {
             //FANTASTIC_MySQL_Connect connect = new FANTASTIC_MySQL_Connect();
-            stmt = FANTASTIC_MySQL_Connect.SQL_connect();
+            //stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
 
             // Tables 연동
+            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY1);
             rsQues = stmt.executeQuery(QUERY1);
+            
+            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY2);
             rsAns = stmt.executeQuery(QUERY2);
+            
+            stmt = FANTASTIC_MySQL_Connect.SQL_connect(QUERY3);
             rsName = stmt.executeQuery(QUERY3);
 
             // Step3: 'name_no' table에 사용자 번호와 이름 update
